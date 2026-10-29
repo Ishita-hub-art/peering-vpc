@@ -5,10 +5,7 @@ Connecting two isolated AWS VPCs privately using VPC peering, built in the AWS C
 This project creates two separate VPCs, a "dev" network and a "prod" network, and connects them with a VPC peering connection. An EC2 instance in the dev VPC can then reach an EC2 instance in the prod VPC using only private IP addresses, without the traffic ever crossing the public internet.
 The prod instance has no public IP and no Internet Gateway, so the only way to reach it is through the peering connection.
 
-#   Architecture
-
-Architecture diagram:-
-
+#   Architecture:-
         dev VPC (10.0.0.0/16)                     prod VPC (10.1.0.0/16)
    +---------------------------+              +---------------------------+
    |  dev subnet 10.0.1.0/24   |              |  prod subnet 10.1.1.0/24  |
