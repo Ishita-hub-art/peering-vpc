@@ -6,11 +6,12 @@ This project creates two separate VPCs, a "dev" network and a "prod" network, an
 The prod instance has no public IP and no Internet Gateway, so the only way to reach it is through the peering connection.
 
 #   Architecture:-
-        dev VPC (10.0.0.0/16)                       prod VPC (10.1.0.0/16)
-   |  dev subnet 10.0.1.0/24   |                |  prod subnet 10.1.1.0/24  |
-   |   instance_dev            |   peering      |   instance_prod           |
-   |   10.0.1.78 (public IP)   | <------------> |   10.1.1.42 (private)     |
-   +---------------------------+                +---------------------------+
+        dev VPC (10.0.0.0/16)                     prod VPC (10.1.0.0/16)
+   +---------------------------+              +---------------------------+
+   |  dev subnet 10.0.1.0/24   |              |  prod subnet 10.1.1.0/24  |
+   |   instance_dev            |   peering    |   instance_prod           |
+   |   10.0.1.78 (public IP)   |<------------>|   10.1.1.42 (private)     |
+   +---------------------------+              +---------------------------+
               |
       Internet Gateway (SSH access only)
 
